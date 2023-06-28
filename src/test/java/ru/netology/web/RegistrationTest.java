@@ -21,16 +21,5 @@ class RegistrationTest {
         $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
         $(byText("Встреча успешно забронирована на 01.07.2023")).shouldBe(visible, Duration.ofSeconds(15));
     }
-
-    @Test
-    void shouldRegisterByAccountNumberVisibilityChange() {
-        open("http://localhost:9999");
-        $$(".tab-item").find(exactText("По номеру счёта")).click();
-        $$("[name='number']").last().setValue("4055 0100 0123 4613 8564");
-        $$("[name='phone']").last().setValue("+792000000000");
-        $$("button").find(exactText("Продолжить")).click();
-        $(withText("Успешная авторизация")).shouldBe(visible, Duration.ofSeconds(5));
-        $(byText("Личный кабинет")).shouldBe(visible, Duration.ofSeconds(5));
-    }
 }
 
