@@ -23,7 +23,7 @@ public class RegistrationTest {
     }
 
     @Test
-    void shouldSubmitValidData3() {
+    void shouldTestCorrectForm() {
         String date = setLocalDate(3);
         $("[data-test-id=city] .input__control").setValue("Ставрополь");
         $("[data-test-id = date] .input__control").doubleClick().sendKeys(date);
